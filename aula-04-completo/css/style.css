@@ -1,0 +1,164 @@
+body{
+    display: grid;
+    grid-template-areas:'navbar'
+                        'banner'
+                        'main'
+                        'section'
+                        'contact'
+                        'footer';
+    grid-template-columns: 100%;
+    margin: 0;
+}
+header{
+    background-image: url(../imagens/ricardin.jpg);
+    background-size: cover;
+    background-position: center;
+    grid-area: banner;
+    height: 600px;
+}
+
+#cabecalho {
+    background-color: purple;
+    grid-area: main;
+}
+
+#cabecalho h1, #cabecalho h2{
+    text-align: center;
+    color: white;
+}
+
+.titulo {
+    text-transform: uppercase;
+}
+
+.subtitulo {
+    width: 350px;
+}
+nav {
+    grid-area: navbar;
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    text-transform: uppercase;
+    padding: 0 10px;
+}
+nav div:nth-child(2){
+    display: none;
+}
+nav div:nth-child(3){
+    display: flex;
+    flex-direction: row;
+    font-style: none;
+    width: 400px;
+    height: 20px;
+    justify-content: space-around;
+}
+
+a {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+}
+
+nav div span{
+    background-color: black;
+    height: 3px;
+    width: 30px;
+}
+nav img {
+    width: 85px;
+    padding-left: 30px;
+}
+section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulo-produtos {
+    text-transform: uppercase;
+}
+
+section .produtos{
+    grid-area: section;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+}
+section .produtos div {
+    margin-left: 50px;
+}
+section .produtos div img{
+    width: 90%;
+}
+
+#contato {
+    grid-area: contact;
+    width: 100%;
+    height: 300px;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+}
+
+#contato div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+footer {
+    background-color: darkslategray;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    height: 50px;
+}
+
+@media(max-width:800px){
+    header{
+        background-image: url(../imagens/gif-01.gif);
+        background-position: center;
+        height: 530px;
+    }
+    nav div a{
+        font-size:14pt; 
+        text-decoration: none;
+    }
+    nav div:nth-child(3){
+        display: none;
+    }
+    nav div:nth-child(2){
+        display: block;
+    }
+    section .funcionarios{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+    }
+    section .produtos {
+        flex-direction: column;
+    }
+    section .produtos img{
+        flex-direction: column;
+        width: 50%;
+    }
+}
+@media(max-width:500px){
+    header{
+        background-image: url(../imagens/ricardin-clone.jpeg);
+        background-position: center;
+    }
+    section .produtos {
+        flex-direction: column;
+    }
+    section .produtos div {
+        flex-direction: column;
+    }
+}
